@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  h1.page-header #{title}
+  ul.list-group
+    each article, i in articles
+      li.list-group-item.bg.myStyle
+        span.glyphicon.glyphicon-triangle-right
+        a.link(href='/articles/' + article._id)= article.title

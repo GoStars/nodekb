@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1.page-header= article.title
+  h5 Written by #{author}
+  p.myStyle= article.body
+  hr
+  if user
+    if user.id ==article.author
+      a.btn.btn-default(href='/articles/edit/' + article._id)
+        span.glyphicon.glyphicon-edit 
+        |  Edit
+      a.btn.btn-danger.delete-article(href='#' data-id=article._id)
+        span.glyphicon.glyphicon-remove
+        |  Delete

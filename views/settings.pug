@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  h1.page-header Settings
+  form(method='POST' action='/settings/' + user._id)
+    #form-group
+      label Name:
+      input.form-control(name='name' type='text' value=user.name)
+    #form-group
+      label Email:
+      input.form-control(name='email' type='email' value=user.email)
+    #form-group
+      label Username:
+      input.form-control(name='username' type='text' value=user.username)    
+    br
+    input.btn.btn-primary(type='submit' value='Submit')
